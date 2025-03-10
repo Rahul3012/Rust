@@ -1,0 +1,71 @@
+[package]
+name = "rust-learning"
+version = "0.1.0"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+# Add dependencies here as needed
+
+# Define binary targets
+[[bin]]
+name = "Hello_World"
+path = "src/Hello_World.rs"
+
+[[bin]]
+name = "Variable_Data_Types"
+path = "src/Variable_Data_Types.rs"
+
+[[bin]]
+name = "Conditionals"
+path = "src/Conditionals.rs"
+
+[[bin]]
+name = "Loops"
+path = "src/Loops.rs"
+
+[[bin]]
+name = "Functions"
+path = "src/Functions.rs"
+
+[[bin]]
+name = "Structs"
+path = "src/Structs.rs"
+
+[[bin]]
+name = "Enums"
+path = "src/Enums.rs"
+
+[[bin]]
+name = "Pattern_Matching"
+path = "src/Pattern_Matching.rs"
+
+[[bin]]
+name = "Ownership_Borrowing_References"
+path = "src/Ownership_Borrowing_References.rs"
+
+[[bin]]
+name = "Concurrency"
+path = "src/Concurrency.rs"
+
+[[bin]]
+name = "Error_Handling"
+path = "src/Error_Handling.rs"
+
+[[bin]]
+name = "Closures"
+path = "src/Closures.rs"
+
+[[bin]]
+name = "Traits"
+path = "src/Traits.rs"
+
+[[bin]]
+name = "Collections"
+path = "src/Collections.rs"
+
+[[bin]]
+name = "Working_with_Modules"
+path = "src/Working_with_Modules.rs"
