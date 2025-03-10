@@ -114,11 +114,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Install Rust
+      # Install Rust using dtolnay/rust-toolchain
       - name: Set up Rust
-        uses: actions/setup-rust@v1
+        uses: dtolnay/rust-toolchain@stable
         with:
-          rust-version: 1.56.0  # You can change to the desired version
+          toolchain: stable  # You can specify a specific version if needed
 
       # Run Rust files if they exist
       - name: Run Rust files
@@ -131,4 +131,3 @@ jobs:
               cargo run --bin "$filename_no_ext"
             fi
           done
-
