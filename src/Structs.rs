@@ -5,7 +5,7 @@ struct Person{
 
 fn main() {
   let person = Person {
-    name: string::from("Alice"),
+    name: String::from("Alice"),
     age: 30,
   };
 
