@@ -6,7 +6,7 @@ fn main(){
   });
 
   //the main thread waits for the spawned thread to finish
-  handle.join().unwrap();
+  handle.join();
 
   println!("Hello from the main thread!");
 }
