@@ -43,8 +43,12 @@ name = "Pattern_Matching"
 path = "src/Pattern_Matching.rs"
 
 [[bin]]
-name = "Ownership_Borrowing_References"
-path = "src/Ownership_Borrowing_References.rs"
+name = "Ownership"
+path = "src/Ownership.rs"
+
+[[bin]]
+name = "Borrowing"
+path = "src/Borrowing.rs"
 
 [[bin]]
 name = "Concurrency"
