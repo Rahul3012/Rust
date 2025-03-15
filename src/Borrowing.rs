@@ -6,5 +6,5 @@ fn main() {
 }
 
 fn borrow_string(s: &String){
-    println("{}",s); //we can read the string but not modify it
+    println!("{}",s); //we can read the string but not modify it
 }
