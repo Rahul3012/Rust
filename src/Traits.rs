@@ -6,7 +6,7 @@ struct Dog;
 struct Cat;
 
 impl Speak for Dog {
-  fn speak(&slef) {
+  fn speak(&self) {
     println!("Woof!");
   }
 }
