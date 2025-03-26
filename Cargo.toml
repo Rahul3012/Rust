@@ -6,7 +6,8 @@ edition = "2024"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
+name = "my_module"
+path = "src/my_module.rs"
 # Add dependencies here as needed
 
 # Define binary targets
@@ -69,10 +70,6 @@ path = "src/Traits.rs"
 [[bin]]
 name = "Collections"
 path = "src/Collections.rs"
-
-[[bin]]
-name = "my_module"
-path = "src/my_module.rs"
 
 [[bin]]
 name = "Working_with_Modules"
