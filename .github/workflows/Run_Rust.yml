@@ -1,38 +1,40 @@
 name: Run Rust Files
- 
- on:
-   push:
-     branches:
-       - main
-   pull_request:
-     branches:
-       - main
- 
- jobs:
-   run_rust_files:
-     runs-on: ubuntu-latest
-     steps:
-       - name: Checkout repository
-         uses: actions/checkout@v2
- 
-       # Install Rust using dtolnay/rust-toolchain
-       - name: Set up Rust
-         uses: dtolnay/rust-toolchain@stable
-         with:
-           toolchain: stable  # You can specify a specific version if needed
- 
-       # Run Rust files if they exist
-       - name: Run Rust files
-         run: |
-           for file in src/*.rs; do
-             if [[ -f "$file" ]]; then
-               filename=$(basename -- "$file")
-               filename_no_ext="${filename%.*}"
-               if [[ "$filename_no_ext" == "my_module" ]]; then
-                 echo "Skipping module: $filename_no_ext"
-                 continue
-               fi
-               echo "Running $filename_no_ext..."
-               cargo run --bin "$filename_no_ext"
-             fi
-           done
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run_rust_files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Install Rust using dtolnay/rust-toolchain
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable  # You can specify a specific version if needed
+
+      # Run Rust files if they exist
+      - name: Run Rust files
+        run: |
+          for file in src/*.rs; do
+            if [[ -f "$file" ]]; then
+              filename=$(basename -- "$file")
+              filename_no_ext="${filename%.*}"
+
+              if [[ "$filename_no_ext" == "my_module" ]]; then
+                echo "Skipping module: $filename_no_ext"
+                continue
+              fi
+
+              echo "Running $filename_no_ext..."
+              cargo run --bin "$filename_no_ext"
+            fi
+          done
