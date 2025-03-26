@@ -21,39 +21,20 @@ jobs:
         with:
           toolchain: stable  # You can specify a specific version if needed
 
-      # Build the Rust project
-      - name: Build Rust project
-        run: cargo build --verbose
-
-      # Run the main binary if main.rs exists
-      - name: Run main binary
+      # Run Rust files if they exist
+      - name: Run Rust files
         run: |
-          if [ -f "src/main.rs" ]; then
-            echo "Running main binary..."
-            cargo run
-          else
-            echo "No main.rs found, skipping execution."
-          fi
+          for file in src/*.rs; do
+            if [[ -f "$file" ]]; then
+              filename=$(basename -- "$file")
+              filename_no_ext="${filename%.*}"
 
-      # Run additional binaries inside src/bin/ but skip my_module.rs
-      - name: Run additional binaries
-        run: |
-          if [ -d "src/bin" ]; then
-            for file in src/bin/*.rs; do
-              if [[ -f "$file" ]]; then
-                filename=$(basename -- "$file")
-                filename_no_ext="${filename%.*}"
-
-                # Skip my_module.rs
-                if [[ "$filename_no_ext" == "my_module" ]]; then
-                  echo "Skipping module: $filename_no_ext"
-                  continue
-                fi
-
-                echo "Running binary: $filename_no_ext..."
-                cargo run --bin "$filename_no_ext"
+              if [[ "$filename_no_ext" == "my_module" ]]; then
+                echo "Skipping module: $filename_no_ext"
+                continue
               fi
-            done
-          else
-            echo "No additional binaries found in src/bin."
-          fi
+
+              echo "Running $filename_no_ext..."
+              cargo run --bin "$filename_no_ext"
+            fi
+          done
