@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 fn main() {
   // Vector
   let mut numbers = vec![1,2,3,4,5];
