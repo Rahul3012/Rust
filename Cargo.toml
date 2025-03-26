@@ -71,5 +71,9 @@ name = "Collections"
 path = "src/Collections.rs"
 
 [[bin]]
+name = "my_module"
+path = "src/my_module.rs"
+
+[[bin]]
 name = "Working_with_Modules"
 path = "src/Working_with_Modules.rs"
