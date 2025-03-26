@@ -7,7 +7,7 @@ fn main() {
   println!("{:?}", numbers);
 
   // hashmap
-  let mut mao = HashMap::new();
+  let mut map = HashMap::new();
   map.insert("name","Rahul");
   map.insert("age","140");
 
