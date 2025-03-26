@@ -39,7 +39,7 @@ jobs:
       - name: Run additional binaries
         run: |
           if [ -d "src/bin" ]; then
-            for file in src/bin/*.rs; do
+            for file in src/*.rs; do
               if [[ -f "$file" ]]; then
                 filename=$(basename -- "$file")
                 filename_no_ext="${filename%.*}"
